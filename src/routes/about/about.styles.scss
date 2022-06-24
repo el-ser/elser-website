@@ -1,0 +1,45 @@
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+    .about-container {
+        padding-bottom: 5rem;
+        flex-grow: 0;
+        flex-shrink: 1;
+        width: 80%;
+            * {
+                margin: 0rem;
+            }
+
+            h1 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.5rem;
+                
+                
+            }
+    
+            h2 {
+                font-family: 'Lexend Exa',
+                    sans-serif;
+                font-size: 5.5rem;
+                text-decoration: underline;
+                letter-spacing: -7px;
+                
+                span {
+                    background-image: linear-gradient(#00A3FF, #8F00FF);
+                    background-clip: text;
+                    color:transparent;
+                }
+            }
+            
+            p {
+                padding-top: 1rem;
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.5rem;
+            }
+    
+            
+        }
+}

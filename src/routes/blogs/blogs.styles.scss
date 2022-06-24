@@ -1,0 +1,31 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    .page-title { 
+        align-self: center;
+    }
+
+    .blog-card-container {
+        display: flex;
+        width:60%;
+        .blog-cover {
+            width: 15%;
+        }
+
+        .blog-details {
+            display:flex;
+            flex-direction: column;
+            
+            .blog-title {
+                
+            }
+            
+            .blog-description {
+
+            }
+
+            
+        }
+    }
+}
