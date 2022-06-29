@@ -11,12 +11,12 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="experience" element={<Experience />} />
         <Route path="blogs" element={<Blogs />} />
       </Route>
     </Routes>
   );
 };
+// <Route path="contact" element={<Contact />} />
+// <Route path="experience" element={<Experience />} />
 
 export default App;

@@ -42,20 +42,21 @@ const Blogs = () => {
   console.log(blogs);
 
   return (
-    <main className="main-content">
+    <main className="blogs-main-container">
       <h1 className="page-title">Blogs</h1>
       {blogs.map(({ title, brief, coverImage, slug }) => {
         return (
-          <div className="blog-card-container">
-            <img className="blog-cover" src={coverImage} alt={slug} />
-            <div className="blog-details">
-              <div className="blog-title">{title}</div>
-              <div className="blog-description">{brief}</div>
-              <button className="read-more-button">See All Blogs</button>
+          <div className="card-container">
+            <img className="cover-image" src={coverImage} alt={slug} />
+            <div className="details">
+              <div className="title">{title}</div>
+              <div className="description">{brief}</div>
+              <button className="read-more-button">Read More</button>
             </div>
           </div>
         );
       })}
+      <button className="see-all-blogs">See All Blogs</button>
     </main>
   );
 };
