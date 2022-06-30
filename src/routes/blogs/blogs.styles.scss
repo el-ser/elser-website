@@ -6,7 +6,7 @@
     justify-content:space-around;
     
     .page-title {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .see-all-blogs { 
@@ -28,10 +28,14 @@
         border-radius: 20px;
         justify-items: center;
 
-        .cover-image {
-            margin: 0.5rem;
-            border-radius: 20px;
-            width: 95%;
+        .image-container {
+            padding: 0.5rem;
+
+            .cover-image {
+                border-radius: 10px;
+                height: auto;
+                max-width:100%;
+            }
         }
 
         .details {
@@ -43,7 +47,7 @@
 
             .title {
                 font-family: 'Lexend Deca', sans-serif;
-                font-size: 1.5rem;
+                font-size: 1.5em;
                 font-weight: bold;
             }
 
@@ -51,15 +55,17 @@
                 font-family: 'Poppins', sans-serif;
                 font-size: 1rem;
                 overflow: scroll;
+                overflow-x: hidden;
                 text-overflow: ellipsis;
-                height: 6rem;
+                // height: 6rem;
             }
 
             .read-more-button {
                 width: 40%;
-                height: 2rem;
+                height: 100%;
                 border-width: 0;
                 font-family: 'Poppins', sans-serif;
+                font-size: 1rem;
                 color: #E0E1DD;
                 align-self: flex-end;
                 border-radius: 10px;
@@ -70,36 +76,41 @@
 
     @media (min-width: 768px) {
         .page-title {
-            font-size: 2rem;
+            font-size: 3vw;
         }
 
         .see-all-blogs {
-            width: 10rem;
-            margin: 2rem 10%;
+            width: 10%;
+            font-size: 1vw;
+            margin: 2rem 15%;
         }
 
         .card-container {
             grid-template-columns: 1fr 2fr;
-            margin: 0 10%;
+            margin: 0 15%;
 
             .cover-image {
                 align-self: center;
             }
 
             .details {
-                justify-content: space-between;
-
+                justify-content: center;
+            
                 .title {
-                    // align-self: center;
+                    align-self: center;
+                    font-size: 2vw;
                 }
 
                 .description {
                     height: auto;
+                    font-size: 1vw;
                     overflow: hidden;
                 }
 
                 .read-more-button {
-                    width: 8rem;
+                    height: 15%;
+                    width: 20%;
+                    font-size: 1vw;
                 }
             }
             
@@ -107,8 +118,3 @@
         }
     }
 }
-
-
-// * {
-//     outline: 1px solid yellow;
-// }

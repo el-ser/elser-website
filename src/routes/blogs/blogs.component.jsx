@@ -47,7 +47,9 @@ const Blogs = () => {
       {blogs.map(({ title, brief, coverImage, slug }) => {
         return (
           <div className="card-container">
-            <img className="cover-image" src={coverImage} alt={slug} />
+            <div className="image-container">
+              <img className="cover-image" src={coverImage} alt={slug} />
+            </div>
             <div className="details">
               <div className="title">{title}</div>
               <div className="description">{brief}</div>

@@ -1,0 +1,39 @@
+aside { 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #415A77;
+    z-index: 1;
+    transition: 3s;
+
+    .close-side-bar {
+        width: 2.5rem;
+        height: 2.5rem;
+        pointer-events: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            padding: 2rem 0;
+            color: #E0E1DD
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    aside {
+        display:none;
+    }
+}

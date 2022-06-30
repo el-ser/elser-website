@@ -1,34 +1,28 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { RiMenuLine } from "react-icons/ri";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
+
+import { NavigationContext } from "../../contexts/navigation.context";
+import PageIcon from "../../components/page-icon/page-icon.component";
+import NavLinks from "../../components/nav-links/nav-links.component";
+import SideBar from "../../components/side-bar/side-bar.component";
+
 import "./navigations.styles.scss";
 
 const Navigation = () => {
+  const { openSideBar, handleOpenSideBar } = useContext(NavigationContext);
+
   return (
     <Fragment>
       <header className="header-container">
-        <div className="brand-title">
-          <Link to={"/"}>
-            <span className="first-half">{"<el"}</span>
-            <span className="separator">{"/"}</span>
-            <span className="second-half">{"ser>"}</span>
-          </Link>
+        <PageIcon />
+        <div
+          className={`nav-menu ${openSideBar ? "active" : ""}`}
+          onClick={handleOpenSideBar}
+        >
+          <RiMenuLine class="icon" />
         </div>
-        <RiMenuLine className="nav-menu" />
-        <nav className="nav-links">
-          <Link className="nav-link" to="/">
-            About
-          </Link>
-          <Link className="nav-link" to="/blogs">
-            Blogs
-          </Link>
-          <Link className="nav-link" to="/experience">
-            Experience
-          </Link>
-          <Link className="nav-link" to="/contact">
-            Contact
-          </Link>
-        </nav>
+        {openSideBar ? <SideBar /> : <NavLinks />}
       </header>
       <Outlet />
     </Fragment>
