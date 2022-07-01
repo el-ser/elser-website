@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { RiMenuLine } from "react-icons/ri";
 import { Fragment, useContext } from "react";
 
+// import { ReactComponent as Logo } from "../../assets/logo-v2.svg";
 import { NavigationContext } from "../../contexts/navigation.context";
 import PageIcon from "../../components/page-icon/page-icon.component";
 import NavLinks from "../../components/nav-links/nav-links.component";
@@ -15,6 +16,7 @@ const Navigation = () => {
   return (
     <Fragment>
       <header className="header-container">
+        {/*<Logo />*/}
         <PageIcon />
         <div
           className={`nav-menu ${openSideBar ? "active" : ""}`}
