@@ -8,8 +8,6 @@ import About from "./routes/about/about.component";
 
 const App = () => {
   return (
-    
-
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<About />} />

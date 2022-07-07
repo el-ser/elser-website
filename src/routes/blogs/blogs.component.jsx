@@ -39,8 +39,6 @@ const Blogs = () => {
     });
   }, []);
 
-  console.log(blogs);
-
   return (
     <main className="blogs-main-container">
       <h1 className="page-title">Blogs</h1>

@@ -1,7 +1,11 @@
 module.exports = {
-  content: ["./src/**/*.{jsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+      lexendDeca: ['Lexend Deca', 'sans-serif']
+    },
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 };
