@@ -8,6 +8,7 @@ const GET_USER_ARTICLES = `
         user(username: "elser") {
             publication {
                 posts(page: $page) {
+                    _id
                     title
                     brief
                     slug
@@ -46,7 +47,7 @@ const Blogs = () => {
       <section className="flex flex-col pt-[12vh] px-[10%] items-center">
         <h1 className="text-4xl py-4 lg:text-[3vw]">Blogs</h1>
         {blogs.map((props) => {
-          return <BlogCard cardDetails={props}/>;
+          return <BlogCard cardDetails={props} key={props._id} />;
         })}
         <button className="self-end border-0 rounded-lg m-4 h-8 w-2/5 font-poppins font-semibold text-smoke-500 bg-navy-blue-400 lg:w-2/12">
           See All Blogs
