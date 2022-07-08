@@ -1,22 +1,23 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import "./nav-links.styles.scss";
+import { NavigationContext } from "../../contexts/navigation.context";
 
 const NavLinks = () => {
+  const { PATH_LIST } = useContext(NavigationContext);
+
   return (
-    <nav className={`nav-links`}>
-      <Link className="nav-link" to="/">
-        About
-      </Link>
-      <Link className="nav-link" to="/blogs">
-        Blogs
-      </Link>
-      <Link className="nav-link" to="/experience">
-        Experience
-      </Link>
-      <Link className="nav-link" to="/contact">
-        Contact
-      </Link>
+    <nav id="nav-links" className="hidden md:flex md:p-0 md:m-0">
+      {PATH_LIST.map(({ to, text }) => (
+        <Link
+          key={text}
+          id="nav-link"
+          to={to}
+          className="font-poppins no-underline text-smoke-500 p-6"
+        >
+          {text}
+        </Link>
+      ))}
     </nav>
   );
 };

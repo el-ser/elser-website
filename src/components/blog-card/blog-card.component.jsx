@@ -1,6 +1,7 @@
 const BlogCard = ({ cardDetails }) => {
   const hashnodeUrl = "https://elser.hashnode.dev/";
   const { coverImage, title, brief, slug } = cardDetails;
+
   return (
     <div
       id="card-container"
@@ -13,10 +14,7 @@ const BlogCard = ({ cardDetails }) => {
           alt={slug}
         />
       </div>
-      <div
-        id="card-details"
-        className="flex flex-col gap-2 m-2 md:justify-center"
-      >
+      <div id="card-details" className="flex flex-col m-2 md:justify-between">
         <div
           id="title"
           className="font-lexendDeca text-2xl font-bold md:self-center md:text-[1.5vw]"

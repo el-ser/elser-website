@@ -21,6 +21,7 @@ const GET_USER_ARTICLES = `
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
+
   useEffect(() => {
     const getAllBlogs = async () => {
       const data = await fetch("https://api.hashnode.com/", {
