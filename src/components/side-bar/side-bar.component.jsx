@@ -24,7 +24,7 @@ const SideBar = () => {
             key={text}
             id="nav-link"
             to={to}
-            className="font-poppins no-underlin text-smoke-500 py-8 text-4xl"
+            className="font-poppins no-underlin text-smoke-500 py-8 text-2xl"
           >
             {text}
           </Link>
