@@ -20,7 +20,7 @@ const Navigation = () => {
           className={`nav-menu ${openSideBar ? "active" : ""}`}
           onClick={handleOpenSideBar}
         >
-          <RiMenuLine class="icon" />
+          <RiMenuLine className="icon" />
         </div>
         {openSideBar ? <SideBar /> : <NavLinks />}
       </header>
