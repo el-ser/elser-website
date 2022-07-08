@@ -6,7 +6,7 @@ const About = () => {
       <section className="flex flex-col justify-center items-center h-screen w-full" id="hero-section">
         <div className="flex flex-col" id="text-intro-container">
           <h1 className="text-2xl lg:text-4xl font-poppins">Hi, my name is</h1>
-            <h2 className="text-5xl font-lexendDeca tracking-normal lg:text-6xl">
+            <h2 className="text-5xl font-lexendDeca font-bold tracking-normal lg:text-6xl underline">
             Manu<span>el Ser</span>afin Bugarin
             </h2>
             <p className="text-xl font-poppins py-2 px-0 lg:text-2xl">

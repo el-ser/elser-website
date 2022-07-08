@@ -6,7 +6,7 @@ module.exports = {
       lexendDeca: ["Lexend Deca", "sans-serif"],
     },
     gridTemplateColumns: {
-      "blog-card": "repeat(1fr, minmax(0, 2fr))",
+      "blog-card": "1fr, 2fr",
     },
     colors: {
       "navy-blue-400": "#415a77",
