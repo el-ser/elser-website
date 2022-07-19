@@ -5,18 +5,21 @@ import { GrTest } from "react-icons/gr";
 import BackgroundImage from "../../assets/about-pic.jpg";
 
 const About = () => {
-  const [offset, setOffset] = useState(0);
+  // const [offset, setOffset] = useState(0);
 
-  useEffect(() => {
-    const onScroll = () => setOffset(window.pageYOffset);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // useEffect(() => {
+  //   const onScroll = () => setOffset(window.pageYOffset);
+  //   window.addEventListener("scroll", onScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
 
-  console.log(offset);
+  // console.log(offset);
 
   return (
     <Fragment>
+      <h1 className="absolute -z-20 text-4xl pt-[12vh] py-4 lg:text-[3vw]">
+        About
+      </h1>
       <section className="flex items-center h-screen">
         <div className="fixed -z-10 left-0 right-0 overflow-hidden">
           <img src={BackgroundImage} alt="background" />
