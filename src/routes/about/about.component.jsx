@@ -1,7 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MdDevices } from "react-icons/md";
-import { GrTest } from "react-icons/gr";
 
+import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
 import BackgroundImage from "../../assets/about-pic.jpg";
 
 const About = () => {
@@ -16,15 +16,19 @@ const About = () => {
   // console.log(offset);
 
   return (
-    <Fragment>
-      <h1 className="absolute -z-20 text-4xl pt-[12vh] py-4 lg:text-[3vw]">
-        About
-      </h1>
+    <MainWrapper>
+      <div className="flex justify-center">
+        <h1 className="absolute -z-10 text-4xl pt-[12vh] py-4 lg:text-[3vw]">
+          About
+        </h1>
+      </div>
+
       <section className="flex items-center h-screen">
-        <div className="fixed -z-10 left-0 right-0 overflow-hidden">
+        <div className="fixed -z-10 left-0 right-0 w-full overflow-hidden">
           <img src={BackgroundImage} alt="background" />
         </div>
       </section>
+
       <section className="flex flex-col justify-center h-screen">
         <p className="m-0">
           Hi, my name is Manuel Serafin Bugarin but you can call me Macky. I
@@ -42,9 +46,9 @@ const About = () => {
         </p>
       </section>
       <section className="flex flex-col justify-center h-screen">
-        <div className="flex">
-          <MdDevices />
-          <ul>
+        <div className="flex justify-around items-center">
+          <MdDevices className="w-2/5 h-1/2" />
+          <ul className="">
             <li>Reactjs</li>
             <li>Tailwindcss</li>
             <li>Redux</li>
@@ -53,8 +57,8 @@ const About = () => {
             <li>GitHub</li>
           </ul>
         </div>
-        <div className="flex">
-          <GrTest />
+        <div className="flex flex-row-reverse justify-around items-center mt-4">
+          <MdDevices className="w-2/5 h-1/2" />
           <ul>
             <li>Cucumber-js</li>
             <li>Behave Python</li>
@@ -65,7 +69,7 @@ const About = () => {
           </ul>
         </div>
       </section>
-    </Fragment>
+    </MainWrapper>
   );
 };
 
