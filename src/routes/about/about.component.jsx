@@ -18,7 +18,7 @@ const About = () => {
   return (
     <MainWrapper>
       <div className="flex justify-center">
-        <h1 className="absolute -z-10 text-4xl pt-[12vh] py-4 lg:text-[3vw]">
+        <h1 className="absolute -z-10 text-4xl font-semibold pt-[12vh] py-4 lg:text-[3vw]">
           About
         </h1>
       </div>
