@@ -1,35 +1,63 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { MdDevices } from "react-icons/md";
 
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
 import BackgroundImage from "../../assets/about-pic.jpg";
 
 const About = () => {
-  // const [offset, setOffset] = useState(0);
+  useEffect(() => {
+    const backgroundNode = document.getElementById("background-container");
+    let observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && window.pageYOffset < 100) {
+          // update width from 175% to 100%
+          backgroundNode.classList.add("w-full");
+          backgroundNode.classList.remove("w-[175%]");
 
-  // useEffect(() => {
-  //   const onScroll = () => setOffset(window.pageYOffset);
-  //   window.addEventListener("scroll", onScroll, { passive: true });
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, []);
+          // update background opacity from 40% to 100%
+          backgroundNode.classList.remove("opacity-40");
+          backgroundNode.classList.add("opacity-100");
+        } else {
+          // update width from 100% to 175%
+          backgroundNode.classList.remove("w-full");
+          backgroundNode.classList.add("w-[175%]");
 
-  // console.log(offset);
+          // update background opacity from 100% to 40%
+          backgroundNode.classList.remove("opacity-100");
+          backgroundNode.classList.add("opacity-40");
+        }
+      },
+      {
+        threshold: 1.0,
+      }
+    );
+    observer.observe(document.getElementById("page-title"));
+  }, []);
 
   return (
     <MainWrapper>
-      <div className="flex justify-center">
-        <h1 className="absolute -z-10 text-4xl font-semibold pt-[12vh] py-4 lg:text-[3vw]">
+      <div id="page-title-container" className="flex justify-center">
+        <h1
+          id="page-title"
+          className="absolute -z-10 text-4xl font-semibold pt-[12vh] py-4 lg:text-[3vw]"
+        >
           About
         </h1>
       </div>
 
       <section className="flex items-center h-screen">
-        <div className="fixed -z-10 left-0 right-0 w-full overflow-hidden">
+        <div
+          id="background-container"
+          className="fixed -z-10 left-0 right-0 w-full overflow-hidden transition-all ease-in-out delay-100 duration-700"
+        >
           <img src={BackgroundImage} alt="background" />
         </div>
       </section>
 
-      <section className="flex flex-col justify-center h-screen">
+      <section
+        id="personal-info"
+        className="flex flex-col justify-center h-screen"
+      >
         <p className="m-0">
           Hi, my name is Manuel Serafin Bugarin but you can call me Macky. I
           graduated at Mapua University with the degree of Bachelor of Science
@@ -45,7 +73,10 @@ const About = () => {
           Here are some of the technologies I use:
         </p>
       </section>
-      <section className="flex flex-col justify-center h-screen">
+      <section
+        id="tech-stack"
+        className="flex flex-col justify-center h-screen"
+      >
         <div className="flex justify-around items-center">
           <MdDevices className="w-2/5 h-1/2" />
           <ul className="">
