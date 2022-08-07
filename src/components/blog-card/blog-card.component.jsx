@@ -1,6 +1,7 @@
 const BlogCard = ({ cardDetails }) => {
   const hashnodeUrl = "https://elser.hashnode.dev/";
   const { coverImage, title, brief, slug } = cardDetails;
+
   return (
     <div
       id="card-container"
@@ -13,10 +14,7 @@ const BlogCard = ({ cardDetails }) => {
           alt={slug}
         />
       </div>
-      <div
-        id="card-details"
-        className="flex flex-col gap-2 m-2 md:justify-center"
-      >
+      <div id="card-details" className="flex flex-col m-2 md:justify-between">
         <div
           id="title"
           className="font-lexendDeca text-2xl font-bold md:self-center md:text-[1.5vw]"
@@ -25,13 +23,13 @@ const BlogCard = ({ cardDetails }) => {
         </div>
         <div
           id="description"
-          className="font-poppins text-base overflow-hidden h-24 md:h-auto md:text-[1vw]"
+          className="font-poppins text-base line-clamp-1 h-24 md:h-auto md:text-[1vw] md:line-clamp-none"
         >
           {brief}
         </div>
         <button
           id="read-more-button"
-          className="w-[40%] h-[10%] border-0 font-poppins text-xs text-smoke-500 self-end rounded-lg bg-navy-blue-400 md:h-1/6 md:w-1/5 md:text-[0.8vw]"
+          className="w-[40%] h-[10%] border-0 font-poppins text-xs text-smoke-500 self-end rounded-lg bg-navy-blue-600 md:h-1/6 md:w-1/5 md:text-[0.8vw]"
         >
           <a href={hashnodeUrl + slug}>Read More</a>
         </button>

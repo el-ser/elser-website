@@ -21,6 +21,7 @@ const GET_USER_ARTICLES = `
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
+
   useEffect(() => {
     const getAllBlogs = async () => {
       const data = await fetch("https://api.hashnode.com/", {
@@ -45,7 +46,7 @@ const Blogs = () => {
   return (
     <MainWrapper>
       <section className="flex flex-col pt-[12vh] px-[10%] items-center">
-        <h1 className="text-4xl py-4 lg:text-[3vw]">Blogs</h1>
+        <h1 className="text-4xl font-semibold py-4 lg:text-[3vw]">Blogs</h1>
         {blogs.map((props) => {
           return <BlogCard cardDetails={props} key={props._id} />;
         })}
