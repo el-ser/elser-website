@@ -23,7 +23,7 @@ const BlogCard = ({ cardDetails }) => {
         </div>
         <div
           id="description"
-          className="font-poppins text-base overflow-hidden h-24 md:h-auto md:text-[1vw]"
+          className="font-poppins text-base line-clamp-1 h-24 md:h-auto md:text-[1vw] md:line-clamp-none"
         >
           {brief}
         </div>

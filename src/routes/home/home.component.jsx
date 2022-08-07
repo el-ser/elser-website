@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
 import Button from "../../components/button/button.component";
 import HeroImage from "../../assets/hero-pic.png";
@@ -9,20 +11,32 @@ const Home = () => {
         id="hero-section"
         className="flex flex-col md:flex-row justify-center items-center h-screen w-full"
       >
-        <div id="text-intro-container" className="flex flex-col lg:w-9/12">
-          <h1 className="text-2xl lg:text-4xl font-poppins">Hey there! I am</h1>
-          <h2 className="text-6xl font-lexendDeca font-bold tracking-normal lg:text-8xl">
-            Manu<span>el Ser</span>afin Bugarin
+        <div
+          id="text-intro-container"
+          className="flex flex-col animate-fade-in-slide-up md:w-9/12"
+        >
+          <h1 className="text-2xl font-poppins md:text-4xl">Hey there! I am</h1>
+          <h2 className="text-6xl font-lexendDeca font-bold tracking-normal md:text-8xl">
+            Manu
+            <span className="text-navy-blue-400">el Ser</span>
+            afin Bugarin
           </h2>
-          <p className="text-xl font-poppins py-2 px-0 lg:w-[95%] lg:text-3xl">
+          <p className="text-xl font-poppins py-2 px-0 md:w-[95%] md:text-3xl">
             A software engineer, passionate in building amazing things
           </p>
-          <Button buttonType="primary" className="my-2 h-8 w-2/6 ">
-            About Me
+          <Button
+            buttonType="primary"
+            className="my-2 h-8 w-32 md:h-12 md:min-w-[12rem] md:text-2xl"
+          >
+            <Link to="/about">About Me</Link>
           </Button>
         </div>
-        <div className="self-center my-2">
-          <img className="rounded-full h-60" src={HeroImage} alt="hero" />
+        <div className="self-center animate-fade-in-slide-up my-2">
+          <img
+            className="rounded-full h-auto w-60 md:w-[35rem]"
+            src={HeroImage}
+            alt="hero"
+          />
         </div>
       </section>
     </MainWrapper>
