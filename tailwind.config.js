@@ -17,6 +17,8 @@ module.exports = {
     extend: {
       animation: {
         "fade-in-slide-up": "fade-in-slide-up 0.8s ease forwards",
+        "fade-in": "fade-in 0.8s ease forwards",
+        "slide-left": "slide-left 0.5s ease forwards",
       },
       keyframes: {
         "fade-in-slide-up": {
@@ -27,6 +29,22 @@ module.exports = {
           "100%": {
             transform: "translateY(0px)",
             opacity: "1",
+          },
+        },
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          },
+        },
+        "slide-left": {
+          "0%": {
+            transform: "translateX(500px)",
+          },
+          "100%": {
+            transform: "translateX(0px)",
           },
         },
       },

@@ -3,34 +3,13 @@ import { MdDevices } from "react-icons/md";
 
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
 import BackgroundImage from "../../assets/about-pic.jpg";
+import { backgroundResizeCallback } from "../../utils/events";
 
 const About = () => {
   useEffect(() => {
-    const backgroundNode = document.getElementById("background-container");
-    let observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && window.pageYOffset < 100) {
-          // update width from 175% to 100%
-          backgroundNode.classList.add("w-full");
-          backgroundNode.classList.remove("w-[175%]");
-
-          // update background opacity from 40% to 100%
-          backgroundNode.classList.remove("opacity-40");
-          backgroundNode.classList.add("opacity-100");
-        } else {
-          // update width from 100% to 175%
-          backgroundNode.classList.remove("w-full");
-          backgroundNode.classList.add("w-[175%]");
-
-          // update background opacity from 100% to 40%
-          backgroundNode.classList.remove("opacity-100");
-          backgroundNode.classList.add("opacity-40");
-        }
-      },
-      {
-        threshold: 1.0,
-      }
-    );
+    let observer = new IntersectionObserver(backgroundResizeCallback, {
+      threshold: 1.0,
+    });
     observer.observe(document.getElementById("page-title"));
   }, []);
 
@@ -41,14 +20,14 @@ const About = () => {
           id="page-title"
           className="absolute -z-10 text-4xl font-semibold pt-[12vh] py-4 lg:text-[3vw]"
         >
-          About
+          About Me
         </h1>
       </div>
 
       <section className="flex items-center h-screen">
         <div
           id="background-container"
-          className="fixed -z-10 left-0 right-0 w-full overflow-hidden transition-all ease-in-out delay-100 duration-700"
+          className="fixed -z-10 left-0 w-full overflow-hidden transition-all ease-in-out duration-700 lg:rounded-3xl lg:max-w-[80%] lg:max-h-[60%] lg:left-[10%] lg:right-[10%]"
         >
           <img src={BackgroundImage} alt="background" />
         </div>
@@ -56,7 +35,7 @@ const About = () => {
 
       <section
         id="personal-info"
-        className="flex flex-col justify-center h-screen"
+        className="flex flex-col justify-center h-screen font-poppins font-normal text-[3.3vw] md:text-[2.3vw] lg:text-[1.5vw] lg:px-36"
       >
         <p className="m-0">
           Hi, my name is Manuel Serafin Bugarin but you can call me Macky. I
