@@ -9,7 +9,7 @@ const Home = () => {
     <MainWrapper>
       <section
         id="hero-section"
-        className="flex flex-col md:flex-row justify-center items-center h-screen w-full"
+        className="flex flex-col justify-center items-center h-screen w-full -z-10 md:flex-row"
       >
         <div
           id="text-intro-container"

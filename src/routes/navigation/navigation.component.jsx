@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { RiMenuLine } from "react-icons/ri";
-import { Fragment, useContext } from "react";
+import { useContext } from "react";
 
 import { NavigationContext } from "../../contexts/navigation.context";
 import PageIcon from "../../components/page-icon/page-icon.component";
@@ -11,7 +11,7 @@ const Navigation = () => {
   const { openSideBar, handleOpenSideBar } = useContext(NavigationContext);
 
   return (
-    <Fragment>
+    <>
       <header
         id="header-container"
         className="flex fixed top-0 left-0 right-0 px-[5%] justify-between items-center bg-navy-blue-800"
@@ -27,7 +27,7 @@ const Navigation = () => {
         {openSideBar ? <SideBar /> : <NavLinks />}
       </header>
       <Outlet />
-    </Fragment>
+    </>
   );
 };
 
