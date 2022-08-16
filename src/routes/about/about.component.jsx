@@ -3,7 +3,11 @@ import { MdDevices } from "react-icons/md";
 
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
 import BackgroundImage from "../../assets/about-pic.jpg";
-import { backgroundResizeCallback } from "../../utils/events";
+import {
+  backgroundResizeCallback,
+  applySnap,
+  removeSnap,
+} from "../../utils/class-handler";
 
 const About = () => {
   useEffect(() => {
@@ -11,6 +15,11 @@ const About = () => {
       threshold: 1.0,
     });
     observer.observe(document.getElementById("page-title"));
+
+    applySnap("html");
+    return function () {
+      removeSnap("html");
+    };
   }, []);
 
   return (
@@ -24,7 +33,7 @@ const About = () => {
         </h1>
       </div>
 
-      <section className="flex items-center h-screen">
+      <section className="flex items-center h-screen snap-center">
         <div
           id="background-container"
           className="fixed -z-10 left-0 w-full overflow-hidden transition-all ease-in-out duration-700 lg:rounded-3xl lg:max-w-[80%] lg:max-h-[60%] lg:left-[10%] lg:right-[10%]"
@@ -35,7 +44,7 @@ const About = () => {
 
       <section
         id="personal-info"
-        className="flex flex-col justify-center h-screen font-poppins font-normal text-[3.3vw] md:text-[2.3vw] lg:text-[1.5vw] lg:px-36"
+        className="flex flex-col snap-center justify-center h-screen font-poppins font-normal text-[3.3vw] md:text-[2.3vw] lg:text-[1.5vw] lg:px-36"
       >
         <p className="m-0">
           Hi, my name is Manuel Serafin Bugarin but you can call me Macky. I
@@ -54,7 +63,7 @@ const About = () => {
       </section>
       <section
         id="tech-stack"
-        className="flex flex-col justify-center h-screen"
+        className="flex flex-col justify-center h-screen snap-center"
       >
         <div className="flex justify-around items-center">
           <MdDevices className="w-2/5 h-1/2" />
