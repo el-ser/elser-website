@@ -63,11 +63,11 @@ const About = () => {
       </section>
       <section
         id="tech-stack"
-        className="flex flex-col justify-center h-screen snap-center"
+        className="flex flex-col justify-center h-screen snap-center md:flex-row md:justify-evenly"
       >
-        <div className="flex justify-around items-center">
-          <MdDevices className="w-2/5 h-1/2" />
-          <ul className="">
+        <div className="flex justify-around items-center md:flex-col md:justify-center">
+          <MdDevices className="w-2/5 h-1/2 md:w-full md:h-1/5" />
+          <ul>
             <li>Reactjs</li>
             <li>Tailwindcss</li>
             <li>Redux</li>
@@ -76,8 +76,8 @@ const About = () => {
             <li>GitHub</li>
           </ul>
         </div>
-        <div className="flex flex-row-reverse justify-around items-center mt-4">
-          <MdDevices className="w-2/5 h-1/2" />
+        <div className="flex flex-row-reverse justify-around items-center mt-4 md:flex-col md:justify-center">
+          <MdDevices className="w-2/5 h-1/2 md:w-full md:h-1/5" />
           <ul>
             <li>Cucumber-js</li>
             <li>Behave Python</li>
