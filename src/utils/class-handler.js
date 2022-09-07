@@ -18,3 +18,15 @@ export const backgroundResizeCallback = (entries) => {
     backgroundNode.classList.add("opacity-40");
   }
 };
+
+export const applySnap = (query) => {
+  const selectorRef = document.querySelector(query);
+  selectorRef.classList.add("snap-y");
+  selectorRef.classList.add("snap-mandatory");
+};
+
+export const removeSnap = (query) => {
+  const selectorRef = document.querySelector(query);
+  selectorRef.classList.remove("snap-y");
+  selectorRef.classList.remove("snap-mandatory");
+};
