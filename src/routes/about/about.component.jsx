@@ -34,12 +34,12 @@ const About = () => {
       <section className="flex justify-center gap-8 items-center h-screen snap-center">
         <div
           id="background-container"
-          className="fixed flex flex-col items-center -z-20 left-[5%]  w-[90%] opacity-100 overflow-hidden transition-all ease-in-out duration-500 lg:max-w-[80%] lg:max-h-[60%] lg:left-[10%] lg:right-[10%]"
+          className="fixed flex flex-col items-center -z-20 left-0 w-full opacity-100 overflow-hidden transition-all ease-in-out duration-500 lg:max-w-[80%] lg:max-h-[60%] lg:left-[10%] lg:right-[10%]"
         >
           <img src={BackgroundImage} className="rounded-3xl" alt="background" />
           <p
             id="intro-text"
-            className="block w-full pt-8 font-poppins h-auto text-justify animate-fade-in"
+            className="description-text block w-full pt-8 h-auto text-justify animate-fade-in"
           >
             Hi, my name is{" "}
             <span className="font-semibold">Manuel Serafin Bugarin</span> but

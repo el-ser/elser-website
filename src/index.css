@@ -6,6 +6,19 @@
     .btn-primary {
         @apply my-2 h-8 w-32 md:h-12 md:min-w-[12rem] md:text-2xl
     }
+    .btn-secondary {
+        
+    }
+    .description-text {
+        @apply font-poppins text-smoke-500
+    }
+    .header-text {
+        @apply font-lexendDeca text-smoke-500
+    }
+
+    .bold-header-text {
+        @apply font-lexendDeca font-bold text-smoke-500
+    }
 }
 
 body {

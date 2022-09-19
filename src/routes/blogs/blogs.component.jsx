@@ -35,7 +35,7 @@ const Blogs = () => {
           variables: { page: 0 },
         }),
       });
-    return data.json();
+      return data.json();
     };
 
     getAllBlogs().then((response) => {
@@ -47,10 +47,11 @@ const Blogs = () => {
   return (
     <MainWrapper>
       <section className="flex flex-col pt-[12vh] px-[10%] items-center">
-        <PageTitle title="Blogs"/>
+        <PageTitle title="Blogs" />
         {blogs.map((props) => {
           return <BlogCard cardDetails={props} key={props._id} />;
         })}
+        {/* <button className="btn-primary">See All Blogs</button> */}
         <button className="self-end border-0 rounded-lg m-4 h-8 w-2/5 font-poppins font-semibold text-smoke-500 bg-navy-blue-400 lg:w-2/12">
           See All Blogs
         </button>
