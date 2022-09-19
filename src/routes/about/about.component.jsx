@@ -1,7 +1,9 @@
 import { useEffect } from "react";
-import { MdDevices } from "react-icons/md";
 
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
+import AboutContent from "../../components/about-content/about-content.component";
+
+import aboutData from "./about-data.json";
 import BackgroundImage from "../../assets/about-pic.jpg";
 import {
   backgroundResizeCallback,
@@ -21,7 +23,7 @@ const About = () => {
       removeSnap("html");
     };
   }, []);
-
+  console.log(aboutData);
   return (
     <MainWrapper>
       <div id="page-title-container" className="flex justify-center">
@@ -42,7 +44,11 @@ const About = () => {
         </div>
       </section>
 
-      <section
+      {aboutData.map(({ id, title, description }) => (
+        <AboutContent key={id} title={title} description={description} />
+      ))}
+
+      {/* <section
         id="personal-info"
         className="flex flex-col snap-center justify-center h-screen font-poppins font-normal text-[3.3vw] md:text-[2.3vw] lg:text-[1.5vw] lg:px-36"
       >
@@ -87,7 +93,7 @@ const About = () => {
             <li>Codeceptjs</li>
           </ul>
         </div>
-      </section>
+      </section> */}
     </MainWrapper>
   );
 };

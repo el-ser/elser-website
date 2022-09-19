@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
+import PageTitle from "../../components/page-title/page-title.component";
 import BlogCard from "../../components/blog-card/blog-card.component";
 
 const GET_USER_ARTICLES = `
@@ -34,7 +35,7 @@ const Blogs = () => {
           variables: { page: 0 },
         }),
       });
-      return data.json();
+    return data.json();
     };
 
     getAllBlogs().then((response) => {
@@ -46,7 +47,7 @@ const Blogs = () => {
   return (
     <MainWrapper>
       <section className="flex flex-col pt-[12vh] px-[10%] items-center">
-        <h1 className="text-4xl font-semibold py-4 lg:text-[3vw]">Blogs</h1>
+        <PageTitle title="Blogs"/>
         {blogs.map((props) => {
           return <BlogCard cardDetails={props} key={props._id} />;
         })}

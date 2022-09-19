@@ -2,6 +2,7 @@ import { IconContext } from "react-icons";
 import { FaFlask } from "react-icons/fa";
 
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
+import PageTitle from "../../components/page-title/page-title.component";
 
 const TECH_STACK = ["Cucumber-js", "PactumJS", "GitLab"];
 
@@ -9,9 +10,7 @@ const Experience = () => {
   return (
     <MainWrapper>
       <div className="flex justify-center">
-        <h1 className="text-4xl font-semibold pt-[12vh] py-4 lg:text-[3vw]">
-          Experience
-        </h1>
+        <PageTitle title="Experience"/>
       </div>
 
       <section className="flex flex-col justify-center items-center gap-4">
