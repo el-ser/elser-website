@@ -1,21 +1,22 @@
 export const backgroundResizeCallback = (entries) => {
-  const backgroundNode = document.getElementById("background-container");
+  const backgroundElement = document.getElementById("background-container");
   if (entries[0].isIntersecting && window.pageYOffset < 100) {
-    // update width from 175% to 100%
-    backgroundNode.classList.add("w-full");
-    backgroundNode.classList.remove("w-[175%]");
+    backgroundElement.classList.replace("w-[175%]", "w-[90%]");
+    backgroundElement.classList.replace("opacity-40", "opacity-100");
+    backgroundElement.classList.replace("left-0", "left-[5%]");
+    
 
-    // update background opacity from 40% to 100%
-    backgroundNode.classList.remove("opacity-40");
-    backgroundNode.classList.add("opacity-100");
   } else {
-    // update width from 100% to 175%
-    backgroundNode.classList.remove("w-full");
-    backgroundNode.classList.add("w-[175%]");
+    backgroundElement.classList.replace("w-[90%]", "w-[175%]");
+    backgroundElement.classList.replace("opacity-100", "opacity-40");
+    backgroundElement.classList.replace("left-[5%]", "left-0");
+  }
 
-    // update background opacity from 100% to 40%
-    backgroundNode.classList.remove("opacity-100");
-    backgroundNode.classList.add("opacity-40");
+  const introTextElement = document.getElementById("intro-text");
+  if (entries[0].isIntersecting && window.pageYOffset < 100) {
+    introTextElement.classList.replace("hidden", "block");
+  } else {
+    introTextElement.classList.replace("block", "hidden");
   }
 };
 

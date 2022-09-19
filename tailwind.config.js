@@ -17,7 +17,7 @@ module.exports = {
     extend: {
       animation: {
         "fade-in-slide-up": "fade-in-slide-up 0.8s ease forwards",
-        "fade-in": "fade-in 0.8s ease forwards",
+        "fade-in": "fade-in 0.8s ease-in forwards",
         "slide-left": "slide-left 0.5s ease forwards",
       },
       keyframes: {

@@ -24,10 +24,7 @@ const Home = () => {
           <p className="text-xl font-poppins py-2 px-0 md:w-[95%] md:text-3xl">
             A software engineer, passionate in building amazing things
           </p>
-          <Button
-            buttonType="primary"
-            className="my-2 h-8 w-32 md:h-12 md:min-w-[12rem] md:text-2xl"
-          >
+          <Button buttonType="primary" className="btn-primary">
             <Link to="/about">About Me</Link>
           </Button>
         </div>
