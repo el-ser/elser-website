@@ -13,7 +13,6 @@ export const backgroundResizeCallback = (entries) => {
     introTextElement.classList.replace("opacity-0", "opacity-100");
     introTextElement.classList.replace("h-0", "h-auto");
     introTextElement.classList.replace("w-0", "w-auto");
-    
   } else {
     introTextElement.classList.replace("opacity-100", "opacity-0");
     introTextElement.classList.replace("h-auto", "h-0");
@@ -22,11 +21,9 @@ export const backgroundResizeCallback = (entries) => {
 
   const imageElement = document.querySelector("#background-container img");
   if (entries[0].isIntersecting && window.pageYOffset < 100) {
-    // imageElement.classList.add("md:clip-custom");
     imageElement.classList.replace("md:w-screen", "md:w-[50vw]");
     imageElement.classList.replace("md:h-[70vh]", "md:h-[60vh]");
-  } else { 
-    // imageElement.classList.remove("md:clip-custom");
+  } else {
     imageElement.classList.replace("md:w-[50vw]", "md:w-screen");
     imageElement.classList.replace("md:h-[60vh]", "md:h-[70vh]");
   }

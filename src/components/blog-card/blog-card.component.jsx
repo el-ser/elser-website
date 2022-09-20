@@ -1,3 +1,5 @@
+import Button from "../button/button.component";
+
 const BlogCard = ({ cardDetails }) => {
   const hashnodeUrl = "https://elser.hashnode.dev/";
   const { coverImage, title, brief, slug } = cardDetails;
@@ -9,30 +11,30 @@ const BlogCard = ({ cardDetails }) => {
     >
       <div id="card-image" className="p-2">
         <img
-          className="rounded-[10px] h-auto max-w-full md:self-center"
+          className="rounded-[10px] shadow-md shadow-navy-blue-800 h-auto max-w-full md:h-full object-cover md:self-center"
           src={coverImage}
           alt={slug}
         />
       </div>
-      <div id="card-details" className="flex flex-col m-2 md:justify-between">
+      <div
+        id="card-details"
+        className="flex flex-col m-2 gap-4 md:justify-between"
+      >
         <div
           id="title"
-          className="font-lexendDeca text-2xl font-bold md:self-center md:text-[1.5vw]"
+          className="header-text header-text-size font-bold md:self-center"
         >
           {title}
         </div>
         <div
           id="description"
-          className="font-poppins text-base line-clamp-1 h-24 md:h-auto md:text-[1vw] md:line-clamp-none"
+          className="description-text readable-text-size h-full overflow-visible text-justify lg:text-[1.1vw]"
         >
           {brief}
         </div>
-        <button
-          id="read-more-button"
-          className="w-[40%] h-[10%] border-0 font-poppins text-xs text-smoke-500 self-end rounded-lg bg-navy-blue-600 md:h-1/6 md:w-1/5 md:text-[0.8vw]"
-        >
+        <Button buttonType="inverted" className="btn-secondary self-end">
           <a href={hashnodeUrl + slug}>Read More</a>
-        </button>
+        </Button>
       </div>
     </div>
   );

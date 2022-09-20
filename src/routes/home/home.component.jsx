@@ -25,7 +25,7 @@ const Home = () => {
           </p>
           <Button
             buttonType="primary"
-            className="btn-primary animate-fade-in-slide-up-2000"
+            className="btn-primary animate-fade-in-slide-up-2000 z-20"
           >
             <Link to="/about">About Me</Link>
           </Button>

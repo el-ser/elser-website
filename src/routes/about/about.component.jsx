@@ -39,12 +39,12 @@ const About = () => {
         >
           <img
             src={BackgroundImage}
-            className="rounded-3xl flex-grow transition-all tease-out animate-fade-in-slide-up-1000 md:clip-custom md:h-[60vh] md:w-[50vw] md:object-cover md:object-left"
+            className="rounded-3xl flex-grow transition-all ease-out animate-fade-in-slide-up-1000 md:clip-custom md:h-[60vh] md:w-[50vw] md:object-cover md:object-left"
             alt="background"
           />
           <p
             id="intro-text"
-            className="description-text description-text-size block animate-fade-in-slide-up-1500 overflow-hidden w-100 pt-8 w-auto h-auto text-justify transition-all opacity-100 duration-1000 delay-1000 ease-out"
+            className="description-text readable-text-size block animate-fade-in-slide-up-1500 overflow-hidden pt-8 w-auto h-auto text-justify transition-all opacity-100 duration-1000 delay-1000 ease-out"
           >
             Hi, my name is{" "}
             <span className="font-semibold">Manuel Serafin Bugarin</span> but

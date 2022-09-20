@@ -1,5 +1,5 @@
 const baseStyle =
-  "border-0 rounded-xl font-poppins font-semibold text-smoke-500";
+  "border-0 rounded-xl font-poppins text-smoke-500 shadow-lg shadow-navy-blue-800";
 
 const getButtonStyle = (buttonType) => {
   return {

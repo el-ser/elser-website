@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
 import PageTitle from "../../components/page-title/page-title.component";
 import BlogCard from "../../components/blog-card/blog-card.component";
+import Button from "../../components/button/button.component";
+import Spinner from "../../components/spinner/spinner.component";
 
 const GET_USER_ARTICLES = `
     query GetUserArticles($page: Int!) {
@@ -47,15 +50,21 @@ const Blogs = () => {
   return (
     <MainWrapper>
       <PageTitle title="Blogs" />
-      <section className="flex flex-col pt-[12vh] px-[10%] items-center">
-        {blogs.map((props) => {
-          return <BlogCard cardDetails={props} key={props._id} />;
-        })}
-        {/* <button className="btn-primary">See All Blogs</button> */}
-        <button className="self-end border-0 rounded-lg m-4 h-8 w-2/5 font-poppins font-semibold text-smoke-500 bg-navy-blue-400 lg:w-2/12">
-          See All Blogs
-        </button>
-      </section>
+      {blogs.length === 0 ? (
+        <Spinner />
+      ) : (
+        <section className="flex flex-col pt-[5vh] px-[5%] items-center lg:px-[10%] animate-fade-in-slide-up-500">
+          {blogs.map((props) => {
+            return <BlogCard cardDetails={props} key={props._id} />;
+          })}
+          <Button
+            buttonType="primary"
+            className="btn-primary self-end lg:text-xl"
+          >
+            <a href="https://elser.hashnode.dev/">See All Blogs</a>
+          </Button>
+        </section>
+      )}
     </MainWrapper>
   );
 };
