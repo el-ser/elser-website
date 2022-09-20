@@ -22,24 +22,29 @@ const About = () => {
     applySnap("html");
     return function () {
       removeSnap("html");
+      observer.disconnect();
     };
   }, []);
 
   return (
     <MainWrapper>
-      <div id="page-title-container" className="flex justify-center">
-        <PageTitle title="About Me" additionalClass="absolute -z-10" />
-      </div>
-
+      <PageTitle
+        title="About Me"
+        additionalClass="absolute -z-10 animate-fade-in-slide-up-500"
+      />
       <section className="flex justify-center gap-8 items-center h-screen snap-center">
         <div
           id="background-container"
-          className="fixed flex flex-col items-center -z-20 left-0 w-full opacity-100 overflow-hidden transition-all ease-in-out duration-500 lg:max-w-[80%] lg:max-h-[60%] lg:left-[10%] lg:right-[10%]"
+          className="fixed flex flex-col gap-8 items-center -z-20 w-full px-[5%] opacity-100 overflow-hidden transition-all ease-in-out duration-1000 sm:pt-[10%] md:flex-row"
         >
-          <img src={BackgroundImage} className="rounded-3xl" alt="background" />
+          <img
+            src={BackgroundImage}
+            className="rounded-3xl flex-grow transition-all tease-out animate-fade-in-slide-up-1000 md:clip-custom md:h-[60vh] md:w-[50vw] md:object-cover md:object-left"
+            alt="background"
+          />
           <p
             id="intro-text"
-            className="description-text block w-full pt-8 h-auto text-justify animate-fade-in"
+            className="description-text description-text-size block animate-fade-in-slide-up-1500 overflow-hidden w-100 pt-8 w-auto h-auto text-justify transition-all opacity-100 duration-1000 delay-1000 ease-out"
           >
             Hi, my name is{" "}
             <span className="font-semibold">Manuel Serafin Bugarin</span> but

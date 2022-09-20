@@ -10,7 +10,7 @@ const Experience = () => {
   return (
     <MainWrapper>
       <div className="flex justify-center">
-        <PageTitle title="Experience"/>
+        <PageTitle title="Experience" />
       </div>
 
       <section className="flex flex-col justify-center items-center gap-4">

@@ -12,17 +12,28 @@
     .description-text {
         @apply font-poppins text-smoke-500
     }
+    .description-text-size {
+        @apply text-[3.3vw] md:text-[2.3vw] lg:text-[2.0vw]
+    }
     .header-text {
         @apply font-lexendDeca text-smoke-500
     }
-
     .bold-header-text {
         @apply font-lexendDeca font-bold text-smoke-500
     }
 }
 
+@layer utilities {
+    .clip-right-chevron {
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 100%, 50% 50%, 0% 0%);
+    }
+    .clip-custom {
+        clip-path: polygon(0 0, 80% 0%, 100% 100%, 20% 100%);
+    }
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     -webkit-font-smoothing: antialiased;

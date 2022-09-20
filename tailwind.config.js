@@ -17,12 +17,21 @@ module.exports = {
     extend: {
       animation: {
         "fade-in-slide-up": "fade-in-slide-up 0.8s ease forwards",
+        "fade-in-slide-up-500": "fade-in-slide-up 0.5s ease-out forwards",
+        "fade-in-slide-up-1000": "fade-in-slide-up 1s ease-out forwards",
+        "fade-in-slide-up-1500": "fade-in-slide-up 1.5s ease-out forwards",
+        "fade-in-slide-up-2000": "fade-in-slide-up 2s ease-out forwards",
+        "fade-in-slide-up-2500": "fade-in-slide-up 2.5s ease-out forwards",
         "fade-in": "fade-in 0.8s ease-in forwards",
         "slide-left": "slide-left 0.5s ease forwards",
       },
       keyframes: {
         "fade-in-slide-up": {
           "0%": {
+            transform: "translateY(100px)",
+            opacity: "0",
+          },
+          "80%": {
             transform: "translateY(100px)",
             opacity: "0",
           },

@@ -46,8 +46,8 @@ const Blogs = () => {
 
   return (
     <MainWrapper>
+      <PageTitle title="Blogs" />
       <section className="flex flex-col pt-[12vh] px-[10%] items-center">
-        <PageTitle title="Blogs" />
         {blogs.map((props) => {
           return <BlogCard cardDetails={props} key={props._id} />;
         })}
