@@ -9,7 +9,7 @@ const Home = () => {
     <MainWrapper>
       <section
         id="hero-section"
-        className="flex flex-col justify-center items-center h-screen w-full -z-10 md:flex-row"
+        className="flex flex-col justify-center items-center h-screen w-full md:flex-row"
       >
         <div id="text-intro-container" className="flex flex-col md:w-9/12">
           <h1 className="description-text text-2xl animate-fade-in-slide-up-500 md:text-4xl ">
@@ -25,7 +25,7 @@ const Home = () => {
           </p>
           <Button
             buttonType="primary"
-            className="btn-primary animate-fade-in-slide-up-2000 z-20"
+            className="btn-primary animate-fade-in-slide-up-2000 z-10 font-semibold"
           >
             <Link to="/about">About Me</Link>
           </Button>

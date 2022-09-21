@@ -22,10 +22,10 @@ export const backgroundResizeCallback = (entries) => {
   const imageElement = document.querySelector("#background-container img");
   if (entries[0].isIntersecting && window.pageYOffset < 100) {
     imageElement.classList.replace("md:w-screen", "md:w-[50vw]");
-    imageElement.classList.replace("md:h-[70vh]", "md:h-[60vh]");
+    imageElement.classList.replace("md:h-screen", "md:h-[60vh]");
   } else {
     imageElement.classList.replace("md:w-[50vw]", "md:w-screen");
-    imageElement.classList.replace("md:h-[60vh]", "md:h-[70vh]");
+    imageElement.classList.replace("md:h-[60vh]", "md:h-screen");
   }
 };
 
