@@ -6,6 +6,7 @@ import PageTitle from "../../components/page-title/page-title.component";
 import BlogCard from "../../components/blog-card/blog-card.component";
 import Button from "../../components/button/button.component";
 import Spinner from "../../components/spinner/spinner.component";
+import { useGetBlogsDataQuery } from "../../store/blogs/blogs.api";
 
 const GET_USER_ARTICLES = `
     query GetUserArticles($page: Int!) {
@@ -26,6 +27,10 @@ const GET_USER_ARTICLES = `
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
 
+  // const { data, error, isLoading } = useGetBlogsDataQuery();
+  // console.log(data);
+  // console.log(isLoading);
+  // console.log(error);
   useEffect(() => {
     const getAllBlogs = async () => {
       const data = await fetch("https://api.hashnode.com/", {
@@ -40,7 +45,6 @@ const Blogs = () => {
       });
       return data.json();
     };
-
     getAllBlogs().then((response) => {
       const posts = response.data.user.publication.posts;
       setBlogs(posts);
