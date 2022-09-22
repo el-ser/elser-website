@@ -30,12 +30,12 @@ const About = () => {
     <MainWrapper>
       <PageTitle
         title="About Me"
-        additionalClass="absolute -z-10 animate-fade-in-slide-up-500"
+        additionalClass="absolute animate-fade-in-slide-up-500"
       />
       <section className="flex justify-center gap-8 items-center h-screen snap-center">
         <div
           id="background-container"
-          className="fixed flex flex-col gap-8 items-center -z-20 w-full px-[5%] opacity-100 overflow-hidden transition-all ease-in-out duration-1000 pt-[15%] md:flex-row"
+          className="fixed flex flex-col gap-8 items-center -z-20 w-full px-[5%] opacity-100 overflow-hidden transition-all ease-in-out duration-1000 pt-[15%] md:pt-[10%] md:flex-row"
         >
           <img
             src={BackgroundImage}

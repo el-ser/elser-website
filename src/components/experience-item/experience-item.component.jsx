@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 const ExperienceItem = ({ title, icon: Icon, description, techStack }) => {
   return (
     <>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 animate-fade-in-slide-up-1000">
         <div className="flex flex-col gap-8 items-center md:flex-row">
           <div className="flex flex-col items-center gap-4 md:w-1/4">
             <IconContext.Provider value={{ color: "white" }}>

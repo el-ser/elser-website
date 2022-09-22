@@ -12,13 +12,11 @@ export const blogsSlice = createSlice({
     fetchInitiate: (state) => {
       state.isLoading = true;
     },
-    fetchSuccess: (state, action) => {
-      const { payload } = action;
+    fetchSuccess: (state, { payload }) => {
       state.blogsInfo = payload;
       state.isLoading = false;
     },
-    fetchFailed: (state, action) => {
-      const { payload } = action;
+    fetchFailed: (state, { payload }) => {
       state.error = payload;
       state.isLoading = false;
     },

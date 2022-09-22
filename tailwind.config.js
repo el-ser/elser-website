@@ -1,7 +1,6 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {    
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
     extend: {
       colors: {
         "navy-blue-400": "#415a77",
@@ -15,7 +14,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         "blog-card": "1fr, 2fr",
-        "experience-item": "1fr 2fr 1fr"
+        "experience-item": "1fr 2fr 1fr",
       },
       animation: {
         "fade-in-slide-up": "fade-in-slide-up 0.8s ease forwards",
@@ -29,11 +28,7 @@ module.exports = {
       },
       keyframes: {
         "fade-in-slide-up": {
-          "0%": {
-            transform: "translateY(100px)",
-            opacity: "0",
-          },
-          "80%": {
+          "0%, 75%": {
             transform: "translateY(100px)",
             opacity: "0",
           },
