@@ -14,7 +14,7 @@ const Navigation = () => {
     <>
       <header
         id="header-container"
-        className="flex fixed top-0 left-0 right-0 px-[5%] justify-between items-center bg-navy-blue-800"
+        className="flex fixed z-20 top-0 left-0 right-0 px-[5%] justify-between items-center bg-navy-blue-800"
       >
         <PageIcon />
         <div

@@ -1,21 +1,31 @@
 export const backgroundResizeCallback = (entries) => {
-  const backgroundNode = document.getElementById("background-container");
+  const backgroundElement = document.getElementById("background-container");
   if (entries[0].isIntersecting && window.pageYOffset < 100) {
-    // update width from 175% to 100%
-    backgroundNode.classList.add("w-full");
-    backgroundNode.classList.remove("w-[175%]");
-
-    // update background opacity from 40% to 100%
-    backgroundNode.classList.remove("opacity-40");
-    backgroundNode.classList.add("opacity-100");
+    backgroundElement.classList.replace("w-[175%]", "w-full");
+    backgroundElement.classList.replace("opacity-40", "opacity-100");
   } else {
-    // update width from 100% to 175%
-    backgroundNode.classList.remove("w-full");
-    backgroundNode.classList.add("w-[175%]");
+    backgroundElement.classList.replace("w-full", "w-[175%]");
+    backgroundElement.classList.replace("opacity-100", "opacity-40");
+  }
 
-    // update background opacity from 100% to 40%
-    backgroundNode.classList.remove("opacity-100");
-    backgroundNode.classList.add("opacity-40");
+  const introTextElement = document.getElementById("intro-text");
+  if (entries[0].isIntersecting && window.pageYOffset < 100) {
+    introTextElement.classList.replace("opacity-0", "opacity-100");
+    introTextElement.classList.replace("h-0", "h-auto");
+    introTextElement.classList.replace("w-0", "w-auto");
+  } else {
+    introTextElement.classList.replace("opacity-100", "opacity-0");
+    introTextElement.classList.replace("h-auto", "h-0");
+    introTextElement.classList.replace("w-auto", "w-0");
+  }
+
+  const imageElement = document.querySelector("#background-container img");
+  if (entries[0].isIntersecting && window.pageYOffset < 100) {
+    imageElement.classList.replace("md:w-screen", "md:w-[50vw]");
+    imageElement.classList.replace("md:h-screen", "md:h-[60vh]");
+  } else {
+    imageElement.classList.replace("md:w-[50vw]", "md:w-screen");
+    imageElement.classList.replace("md:h-[60vh]", "md:h-screen");
   }
 };
 

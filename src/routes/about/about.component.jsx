@@ -1,7 +1,10 @@
 import { useEffect } from "react";
-import { MdDevices } from "react-icons/md";
 
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
+import AboutContent from "../../components/about-content/about-content.component";
+import PageTitle from "../../components/page-title/page-title.component";
+
+import aboutData from "./about-data.json";
 import BackgroundImage from "../../assets/about-pic.jpg";
 import {
   backgroundResizeCallback,
@@ -19,75 +22,42 @@ const About = () => {
     applySnap("html");
     return function () {
       removeSnap("html");
+      observer.disconnect();
     };
   }, []);
 
   return (
     <MainWrapper>
-      <div id="page-title-container" className="flex justify-center">
-        <h1
-          id="page-title"
-          className="absolute -z-10 text-4xl font-semibold pt-[12vh] py-4 lg:text-[3vw]"
-        >
-          About Me
-        </h1>
-      </div>
-
-      <section className="flex items-center h-screen snap-center">
+      <PageTitle
+        title="About Me"
+        additionalClass="absolute animate-fade-in-slide-up-500"
+      />
+      <section className="flex justify-center gap-8 items-center h-screen snap-center">
         <div
           id="background-container"
-          className="fixed -z-10 left-0 w-full overflow-hidden transition-all ease-in-out duration-700 lg:rounded-3xl lg:max-w-[80%] lg:max-h-[60%] lg:left-[10%] lg:right-[10%]"
+          className="fixed flex flex-col gap-8 items-center -z-20 w-full px-[5%] opacity-100 overflow-hidden transition-all ease-in-out duration-1000 pt-[15%] md:pt-[10%] md:flex-row"
         >
-          <img src={BackgroundImage} alt="background" />
+          <img
+            src={BackgroundImage}
+            className="rounded-3xl flex-grow transition-all ease-out animate-fade-in-slide-up-1000 md:clip-custom md:h-[60vh] md:w-[50vw] md:object-cover md:object-left"
+            alt="background"
+          />
+          <p
+            id="intro-text"
+            className="description-text readable-text-size block animate-fade-in-slide-up-1500 overflow-hidden pt-8 w-auto h-auto text-justify transition-all opacity-100 duration-1000 delay-1000 ease-out"
+          >
+            Hi, my name is{" "}
+            <span className="font-semibold">Manuel Serafin Bugarin</span> but
+            others call me <span className="font-semibold">Macky</span>. I am a
+            JavaScript Developer from Philippines striving to be a great Full
+            Stack Developer. Let me tell you about my story!
+          </p>
         </div>
       </section>
 
-      <section
-        id="personal-info"
-        className="flex flex-col snap-center justify-center h-screen font-poppins font-normal text-[3.3vw] md:text-[2.3vw] lg:text-[1.5vw] lg:px-36"
-      >
-        <p className="m-0">
-          Hi, my name is Manuel Serafin Bugarin but you can call me Macky. I
-          graduated at Mapua University with the degree of Bachelor of Science
-          in Computer Science.
-          <br /> <br />
-        </p>
-        <p className="m-0">
-          I started working as an test automation intern back in 2016 and
-          eventually got absorbed to be regular employee. As time goes by, my
-          passion for software development grew and led me to developing new
-          things using Javascript as my main programming language.
-          <br /> <br />
-          Here are some of the technologies I use:
-        </p>
-      </section>
-      <section
-        id="tech-stack"
-        className="flex flex-col justify-center h-screen snap-center md:flex-row md:justify-evenly"
-      >
-        <div className="flex justify-around items-center md:flex-col md:justify-center">
-          <MdDevices className="w-2/5 h-1/2 md:w-full md:h-1/5" />
-          <ul>
-            <li>Reactjs</li>
-            <li>Tailwindcss</li>
-            <li>Redux</li>
-            <li>TypeScript</li>
-            <li>JavasScript</li>
-            <li>GitHub</li>
-          </ul>
-        </div>
-        <div className="flex flex-row-reverse justify-around items-center mt-4 md:flex-col md:justify-center">
-          <MdDevices className="w-2/5 h-1/2 md:w-full md:h-1/5" />
-          <ul>
-            <li>Cucumber-js</li>
-            <li>Behave Python</li>
-            <li>GitLab</li>
-            <li>PactumJS</li>
-            <li>Postman</li>
-            <li>Codeceptjs</li>
-          </ul>
-        </div>
-      </section>
+      {aboutData.map(({ id, title, description }) => (
+        <AboutContent key={id} title={title} description={description} />
+      ))}
     </MainWrapper>
   );
 };
