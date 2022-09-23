@@ -3,9 +3,19 @@ import { FaFlask } from "react-icons/fa";
 import MainWrapper from "../../components/main-wrapper/main-wrapper.component";
 import PageTitle from "../../components/page-title/page-title.component";
 import ExperienceItem from "../../components/experience-item/experience-item.component";
+import { IconType } from "react-icons/lib";
 
-const experienceItems = [
+export type ExpItem = {
+  id?: number
+  title: string;
+  icon: IconType;
+  description: string;
+  techStack: string[];
+}
+
+const experienceItems: ExpItem[] = [
   {
+    id: 1,
     title: "Cucumber and PactumJS for API Test Automation",
     icon: FaFlask,
     description: `morbi tincidunt augue interdum velit euismod in pellentesque massa
@@ -15,8 +25,8 @@ const experienceItems = [
     vulputate odio ut enim blandit volutpat maecenas volutpat blandit`,
     techStack: ["Cucumber-js", "PactumJS", "GitLab"],
   },
-
   {
+    id: 2,
     title: "Cucumber and PactumJS for API Test Automation",
     icon: FaFlask,
     description: `morbi tincidunt augue interdum velit euismod in pellentesque massa
@@ -40,9 +50,10 @@ const Experience = () => {
 
       <section className="flex flex-col justify-center items-center gap-16">
         {experienceItems.map((item) => {
-          const { title, icon, description, techStack } = item;
+          const { id, title, icon, description, techStack } = item;
           return (
             <ExperienceItem
+              key={id}
               title={title}
               icon={icon}
               description={description}

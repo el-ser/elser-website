@@ -1,6 +1,7 @@
 import { IconContext } from "react-icons";
+import type { ExpItem } from "../../routes/experience/experience.component";
 
-const ExperienceItem = ({ title, icon: Icon, description, techStack }) => {
+const ExperienceItem = ({title, icon: Icon, description, techStack }: ExpItem) => {
   return (
     <>
       <div className="flex flex-col gap-8 animate-fade-in-slide-up-1000">
@@ -19,8 +20,10 @@ const ExperienceItem = ({ title, icon: Icon, description, techStack }) => {
           <div className="flex flex-col gap-4 self-start md:w-1/4 md:items-center">
             <h3 className="font-lexendDeca font-bold text-xl">Tech Stack</h3>
             <ul>
-              {techStack.map((text) => (
-                <li className="list-disc ml-8">{text}</li>
+              {techStack.map((text, index) => (
+                <li key={index} className="list-disc ml-8">
+                  {text}
+                </li>
               ))}
             </ul>
           </div>

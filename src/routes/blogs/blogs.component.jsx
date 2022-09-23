@@ -3,7 +3,7 @@ import PageTitle from "../../components/page-title/page-title.component";
 import BlogCard from "../../components/blog-card/blog-card.component";
 import Button from "../../components/button/button.component";
 import Spinner from "../../components/spinner/spinner.component";
-import { useGetBlogsDataQuery } from "../../store/blogs/blogs.api";
+import { useGetBlogPostsQuery } from "../../store/blogs/blogs.api";
 
 const handleDisplay = ({ isLoading, error, data }) => {
   if (isLoading) {
@@ -16,7 +16,7 @@ const handleDisplay = ({ isLoading, error, data }) => {
 
   return (
     <section className="flex flex-col pt-[5vh] px-[5%] items-center lg:px-[10%] animate-fade-in-slide-up-1000">
-      {data.user.publication.posts.map((props) => {
+      {data.map((props) => {
         return <BlogCard cardDetails={props} key={props._id} />;
       })}
       <Button
@@ -30,12 +30,12 @@ const handleDisplay = ({ isLoading, error, data }) => {
 };
 
 const Blogs = () => {
-  const blogsQuery = useGetBlogsDataQuery();
+  const { isLoading, error, data } = useGetBlogPostsQuery();
 
   return (
     <MainWrapper>
       <PageTitle title="Blogs" additionalClass="animate-fade-in-slide-up-500" />
-      {handleDisplay(blogsQuery)}
+      {handleDisplay({ isLoading, error, data })}
     </MainWrapper>
   );
 };

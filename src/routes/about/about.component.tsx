@@ -17,7 +17,8 @@ const About = () => {
     let observer = new IntersectionObserver(backgroundResizeCallback, {
       threshold: 1.0,
     });
-    observer.observe(document.getElementById("page-title"));
+    const pageTitle = document.getElementById("page-title") as Element;
+    observer.observe(pageTitle);
 
     applySnap("html");
     return function () {

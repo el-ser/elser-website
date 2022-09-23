@@ -37,12 +37,13 @@ export const blogsApi = createApi({
   reducerPath: "blogsApi",
   baseQuery: graphqlBaseQuery({ baseUrl: "https://api.hashnode.com/" }),
   endpoints: (builder) => ({
-    getBlogsData: builder.query({
+    getBlogPosts: builder.query({
       query: () => ({
         body: GET_USER_ARTICLES,
       }),
+      transformResponse: (response) => response.user.publication.posts,
     }),
   }),
 });
 
-export const { useGetBlogsDataQuery } = blogsApi;
+export const { useGetBlogPostsQuery } = blogsApi;
